@@ -266,6 +266,15 @@ img.socialMediaBtn{
     height: 75px;
 }
 
+li.socialMediaBtn1 a:hover,
+li.socialMediaBtn2 a:hover,
+li.socialMediaBtn3 a:hover,
+li.socialMediaBtn4 a:hover,
+li.socialMediaBtn5 a:hover,
+li.socialMediaBtn6 a:hover{
+	opacity: 0.2;
+}
+
 li.socialMediaBtn1,
 li.socialMediaBtn4  {
     float:left;
