@@ -18,9 +18,10 @@ body{
 
 article.cbp-so-side.cbp-so-side-left a,
 article.cbp-so-side.cbp-so-side-right a,
+a:hover,
 a.company:hover,
 a.contactLink:hover,
-a.homeLink:hover
+a.homeLink:hover,
 a.info:hover,
 a.website:hover,
 .cbp-af-header nav a:hover,
@@ -34,7 +35,8 @@ div.pager.blogPage a:hover,
 form#commentform p a:hover
 ul.pager.productPage a:hover,
 div.reply a:hover,
-ul.blogTags a:hover{
+ul.blogTags a:hover,
+ul.pager.productPage a:hover{
     color: #333;
     text-decoration: none;
 }
@@ -65,6 +67,7 @@ ul.monthlyList.sidebar li a,
 ul.pager.productPage a,
 ul.yearlyList.sidebar li a {
     color: #aaa;
+    text-decoration: none;
 }
 
 
@@ -265,6 +268,7 @@ img.socialMediaBtn{
     width: 75px;
     height: 75px;
 }
+
 
 li.socialMediaBtn1 a:hover,
 li.socialMediaBtn2 a:hover,
