@@ -125,11 +125,21 @@
             </div> <!-- .col-xs-12 .productPage -->
         </div> <!-- .row -->            
     </div> <!-- .container -->
-    <nav>
-        <ul class="pager productPage">
-            <?php previous_post_link(); ?>  ||  <?php next_post_link(); ?>
-        </ul>
+    <nav class="portfolio pagination">
+        <?php previous_post_link(); ?>  
+        	<a href="<?php bloginfo('url'); ?>/?p=51"><i class="fa fa-th-large"></i></a> 
+        <?php next_post_link(); ?>   
     </nav>
+    
+    <?php if (show_posts_nav()) : ?>
+        <nav class="archive-portfolio pagination">
+            <ul class="pager productPage">
+                <?php previous_post_link(); ?>  
+                	<a href="<?php bloginfo('url'); ?>/?p=51"><i class="fa fa-th-large"></i></a>
+                <?php next_post_link(); ?>
+            </ul>
+        </nav>
+    <?php endif; ?>
 
 <?php get_footer(); ?>
 
