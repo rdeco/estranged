@@ -10,20 +10,19 @@ $args = array(
 	'default-image' => get_template_directory_uri() . '/imgs/headerTop.jpg',
 );
 add_theme_support( 'custom-header', $args );
+add_theme_support( 'post-thumbnails' );
 
 /**
  * Enqueue scripts & stylesheets
  * -----------------------------
  */
- 
- 
-  
+   
 function estranged_style() {
 	wp_enqueue_style ('main_css', get_template_directory_uri().'/css/main.css' );
 	wp_enqueue_style ('bootstrap_css', get_template_directory_uri().'/css/bootstrap.min.css' );
 	wp_enqueue_style ('bootstrap_theme_css', get_template_directory_uri().'/css/bootstrap-theme.min.css' );
 	wp_enqueue_style ('googlefonts_css', 'http://fonts.googleapis.com/css?family=Questrial' );	
-	
+	wp_enqueue_style ('font-awesome', get_template_directory_uri().'/css/font-awesome.min.css' );	
 }
 add_action('wp_enqueue_scripts', 'estranged_style');
 
@@ -45,19 +44,10 @@ function estranged_scripts() {
 }
 add_action('wp_enqueue_scripts', 'estranged_scripts');
 
-
-
-/**
- * End enqueue scripts & stylesheets
- * -----------------------------
- */
-
-
 /**
  * Register Navigation Menus
  * -------------------------
  */
-
 
 function estranged_register_menu(){
     register_nav_menus(
@@ -68,12 +58,6 @@ function estranged_register_menu(){
 	);	
 }
 add_action('init', 'estranged_register_menu');
-
-/**
- * End register Navigation Menus
- * -------------------------
- */
-
 
 /**
  * Register Sidebar
@@ -92,285 +76,12 @@ function estranged_sidebar() {
 add_action( 'widgets_init', 'estranged_sidebar' );
 
 /**
- * End register Sidebar
- * ---------------------
- */
-
-
-/**
  * Register featured image size
  * ----------------------------
  */
 
-add_theme_support('post-thumbnails');
 add_image_size('blog-thumb', 350, 350, true);
 add_image_size('archive-portfolio-thumb', 500, 350, true);
-add_image_size('portfolio-thumb', 500, 400, true);
-add_image_size('secondary-portfolio-thumb', 500, 400, true);
-add_image_size('third-portfolio-thumb', 500, 400, true);
-add_image_size('fourth-portfolio-thumb', 500, 400, true);
-add_image_size('fifth-portfolio-thumb', 500, 400, true);
-
-/**
- * End register featured image size
- * --------------------------------
- */
-
-
-/**
-* Register multiple images
-* ----------------------------
-*/
-
-if (class_exists('MultiPostThumbnails')) {
-    new MultiPostThumbnails(array(
-        'label' => 'Secondary Image',
-        'id' => 'secondary-image',
-        'post_type' => 'portfolio'
-    ) );
-}
-
-if (class_exists('MultiPostThumbnails')) {
-new MultiPostThumbnails(array(
-        'label' => 'Third Image',
-        'id' => 'third-image',
-        'post_type' => 'portfolio'
-    ) );
-}
-
-if (class_exists('MultiPostThumbnails')) {
-new MultiPostThumbnails(array(
-        'label' => 'Fourth Image',
-        'id' => 'fourth-image',
-        'post_type' => 'portfolio'
-    ) );
-}
-
-if (class_exists('MultiPostThumbnails')) {
-new MultiPostThumbnails(array(
-        'label' => 'Fifth Image',
-        'id' => 'fifth-image',
-        'post_type' => 'portfolio'
-    ) );
-}
-
-
-/**
-* End Register multiple images
-* ----------------------------
-*/
-
-/**
-* Adds support for portfolio custom post types
-* --------------------------------------------
-*/
-function estranged_custom_posttypes() {
-  	$labels = array(
-  		'name'               => _x( 'Portfolio', 'post type original name' ),
-  		'singular_name'      => _x( 'Portfolio', 'post type singular name' ),
-  		'menu_name'          => _x( 'Portfolio', 'menu name'),
-  		'add_new'            => _x( 'Add New Item', ' ' ),
-  		'add_new_item'       => __( 'Add Portfolio Item' ),
-  		'new_item'           => __( 'New Portfolio Item' ),
-  		'edit_item'          => __( 'Edit Portfolio Item'),
-  		'view_item'          => __( 'View Portfolio Item'),
-  		'all_items'          => __( 'Portfolio'),
-  		'search_items'       => __( 'Search Portfolio'),
-  		'parent_item_colon'  => __( 'Parent Portfolio:'),
-  		'not_found'          => __( 'No portfolio items found.' ),
-  		'not_found_in_trash' => __( 'No portfolio items found in Trash.' )
-  	);
-
-  	$args = array(
-  		'labels'             => $labels,
-  		'public'             => true,
-  		'publicly_queryable' => true,
-  		'show_ui'            => true,
-  		'show_in_menu'       => true,
-  		'query_var'          => true,
-  		'rewrite'            => array( 'slug' => 'portfolio' ),
-  		'capability_type'    => 'post',
-  		'has_archive'        => true,
-  		'hierarchical'       => false,
-  		'taxonomies'         => array('category', 'post_tag'),
-  		'menu_position'      => 5,
-  		'menu_icon'          => 'dashicons-portfolio',
-  		'supports'           => array( 'title', 'editor',  'thumbnail', 'excerpt', 'comments' )
-  	);
-  register_post_type( 'portfolio', $args );
-}
-add_action( 'init', 'estranged_custom_posttypes' );
-
-
-function my_rewrite_flush() {
-    // First, we "add" the custom post type via the above written function.
-    // Note: "add" is written with quotes, as CPTs don't get added to the DB,
-    // They are only referenced in the post_type column with a post entry,
-    // when you add a post of this CPT.
-    estranged_custom_posttypes();
-
-    // ATTENTION: This is *only* done during plugin activation hook in this example!
-    // You should *NEVER EVER* do this on every page load!!
-    flush_rewrite_rules();
-}
-register_activation_hook( __FILE__, 'my_rewrite_flush' );
-
-/**
-* End support for portfolio custom post types
-* ------------------------------------------
-*/
-
-
-/**
- * Adds support for meta box -  portfolio page - website name
- * -------------------------------------------------------------------
- */
-
-function estranged_website_field() {
-    add_meta_box( 'meta-box-id-website-title', 'Website Name', 'estranged_website_field_title', 'portfolio', 'normal', 'high' );
-}
-
-add_action( 'add_meta_boxes', 'estranged_website_field' );
-
-
-
-    function estranged_website_field_title( $post ) {
-        $values = get_post_custom( $post->ID );
-        $text = isset( $values['meta_box_website_field'] ) ? esc_attr( $values['meta_box_website_field'][0] ) : '';
-?>
-<p>
-    <label for="meta_box_text">Website Name:  </label>
-    <input type="text" name="meta_box_website_field" id="meta_box_website_field" value="<?php echo $text; ?>" />
-</p>
-
-<?php
-}
-
-
-add_action( 'save_post', 'estranged_meta_box_save_website_name' );
-function estranged_meta_box_save_website_name( $post_id ) {
-    // Bail if we're doing an auto save
-    if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-
-    // if our current user can't edit this post, bail
-    if( !current_user_can( 'edit_post', $post_id ) ) return;
-
-    // now we can actually save the data
-    $allowed = array(
-        'a' => array( // on allow a tags
-            'href' => array() // and those anchors can only have href attribute
-        )
-    );
-
-    // Make sure your data is set before trying to save it
-    if( isset( $_POST['meta_box_website_field'] ) )
-        update_post_meta( $post_id, 'meta_box_website_field', wp_kses( $_POST['meta_box_website_field'], $allowed ) );
-
-}
-/**
- * Ends support for meta box -  portfolio page - website name
- * -------------------------------------------------------------------
- */
-
-/**
-* Adds support for meta box -  portfolio page - company name
-* -------------------------------------------------------------------
-*/
-
-function estranged_company_field() {
-    add_meta_box( 'meta-box-id-company-title', 'Company Name', 'estranged_company_field_title', 'portfolio', 'normal', 'high' );
-}
-
-add_action( 'add_meta_boxes', 'estranged_company_field' );
-
- function estranged_company_field_title( $post ) {
-     $values = get_post_custom( $post->ID );
-     $text = isset( $values['meta_box_company_field'] ) ? esc_attr( $values['meta_box_company_field'][0] ) : '';
-?>
-<p>
-    <label for="meta_box_text">Company Name:  </label>
-    <input type="text" name="meta_box_company_field" id="meta_box_company_field" value="<?php echo $text; ?>" />
-</p>
-
-<?php
-}
-
-
-add_action( 'save_post', 'estranged_meta_box_save_company_name' );
-function estranged_meta_box_save_company_name( $post_id ) {
-     // Bail if we're doing an auto save
-     if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-
-     // if our current user can't edit this post, bail
-     if( !current_user_can( 'edit_post', $post_id ) ) return;
-
-     // now we can actually save the data
-     $allowed = array(
-         'a' => array( // on allow a tags
-             'href' => array() // and those anchors can only have href attribute
-         )
-     );
-
-     // Make sure your data is set before trying to save it
-     if( isset( $_POST['meta_box_company_field'] ) )
-         update_post_meta( $post_id, 'meta_box_company_field', wp_kses( $_POST['meta_box_company_field'], $allowed ) );
-
-}
-/**
-* Ends support for meta box -  portfolio page - company name
-* -------------------------------------------------------------------
-*/
-
-/**
-* Adds support for meta box -  portfolio page - date
-* -------------------------------------------------------------------
-*/
-
-function estranged_date_field() {
-    add_meta_box( 'meta-box-id-date-title', 'Date Published', 'estranged_date_field_title', 'portfolio', 'normal', 'high' );
-}
-
-add_action( 'add_meta_boxes', 'estranged_date_field' );
-
- function estranged_date_field_title( $post ) {
-     $values = get_post_custom( $post->ID );
-     $text = isset( $values['meta_box_date_field'] ) ? esc_attr( $values['meta_box_date_field'][0] ) : '';
-?>
-<p>
-    <label for="meta_box_text">Date:  </label>
-    <input type="text" name="meta_box_date_field" id="meta_box_date_field" value="<?php echo $text; ?>" />
-</p>
-
-<?php
-}
-
-
-add_action( 'save_post', 'estranged_meta_box_save_date_name' );
-function estranged_meta_box_save_date_name( $post_id ) {
-     // Bail if we're doing an auto save
-     if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-
-     // if our current user can't edit this post, bail
-     if( !current_user_can( 'edit_post', $post_id ) ) return;
-
-     // now we can actually save the data
-     $allowed = array(
-         'a' => array( // on allow a tags
-             'href' => array() // and those anchors can only have href attribute
-         )
-     );
-
-     // Make sure your data is set before trying to save it
-     if( isset( $_POST['meta_box_date_field'] ) )
-         update_post_meta( $post_id, 'meta_box_date_field', wp_kses( $_POST['meta_box_date_field'], $allowed ) );
-
-}
-/**
-* Ends support for meta box -  portfolio page - date
-* -------------------------------------------------------------------
-*/
-
-
 
 /**
 * Adds support for pagination
@@ -414,8 +125,6 @@ function pagination($pages = '', $range = 50)
      }
 }
 
-
-
 /**
  * If more than one page exists, return TRUE.
  */
@@ -423,11 +132,6 @@ function show_posts_nav() {
 	global $wp_query;
 	return ($wp_query->max_num_pages > 1);
 }
-
-/**
- * Ends support for pagination
- * ---------------------------
- */
 
 /**
  * Starts support for comment count
@@ -446,12 +150,6 @@ function show_posts_nav() {
  }
 
 /**
- * Ends support for comment count
- * ---------------------------------
- */
-
-
-/**
  * Starts support for excerpt character count
  * ------------------------------------------
  */
@@ -465,12 +163,6 @@ function new_excerpt_more( $more ) {
 	return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
-
-/**
- * Ends support for excerpt character count
- * ------------------------------------------
- */
-
 
 /**
 * Starts support for cpt (portfolio) admin panel
@@ -501,13 +193,6 @@ function portfolio_cpt_custom_column($column_name, $id) {
          } // end switch
 }
 
-
-
-/**
-* Starts support for cpt (portfolio) admin panel
-* ----------------------------------------------
-*/
-
 /**
 * Starts support for posts admin panel
 * ----------------------------------------------
@@ -532,8 +217,6 @@ function post_custom_column($column_name, $id) {
 
          } // end switch
 }
-
-
 
 /**
 * Starts support for posts admin panel
@@ -580,7 +263,5 @@ class fixImageMargins{
     }
 }
 $fixImageMargins = new fixImageMargins();
-
-
 
 ?>
