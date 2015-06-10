@@ -4,7 +4,7 @@
 	*/
 	
 	get_header(); ?>
-    <div class="container portfolioSection">
+    <section class="container portfolioSection">
         <div class="row">
 	        <div class="col-xs-12 archiveTitle">	        
 	        	<h1>Portfolio</h1>
@@ -30,7 +30,7 @@
                 }
             ?>
         </div> <!-- .col-xs-12 .portfolioPage -->
-    </div> <!-- .container .portfolioSection -->
+    </section> <!-- .container .portfolioSection -->
     <?php if (show_posts_nav()) : ?>
         <nav class="archive-portfolio pagination">
                 <?php previous_posts_link('&laquo; Previous Page'); ?>  
