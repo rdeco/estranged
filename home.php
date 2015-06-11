@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    <section class="container blogArchive">
+    <div class="container blogArchive">
 	    <div class="row">
             <div class="col-lrg-2 col-lrg-offset-10 col-xs-12 blogArchivePage">
                 <aside>
@@ -34,7 +34,7 @@
 	                    <div class="glyphicon tag">
 	                        <span class="glyphicon glyphicon-tags"></span>
 	                        <ul class="blogTags">
-	                             <?php the_tags('   •   ', '   •   '); ?>
+	                             <?php the_tags( '   •   '); ?>
 	                        </ul>
 	                    </div>
 	                    <div class="comments blogArchive">
@@ -59,12 +59,12 @@
 	        </div> <!-- .col-xs-12 .blogArchive -->
     	</div> <!-- .row -->    
 	    <?php if (show_posts_nav()) : ?>	   
-	        <div class="pager blogArchive">
+        	<nav class="pagination">	   
 	            <?php previous_posts_link('&laquo; Previous Posts') ?>
 	            	<a href="<?php bloginfo('url'); ?>/?p=6"><i class="fa fa-th-large"></i></a>
 	            <?php next_posts_link('More Posts &raquo;') ?>
-	        </div>	  
+        	</nav>
 		<?php endif; ?>
-	</section> <!-- .container .blogArchive -->
+	</div> <!-- .container .blogArchive -->
 <?php get_footer(); ?>
 
