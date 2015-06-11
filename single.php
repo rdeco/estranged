@@ -38,20 +38,18 @@
                         <div class="comments blogPage">
                             <?php comments_template('comments.php'); ?>
                         </div>
-						<nav class="nav-blog">
-							<div class="pager blogPage">
-								<?php previous_post_link(); ?>
-									<a href="<?php bloginfo('url'); ?>/?p=6"><i class="fa fa-th-large"></i></a>
-								<?php next_post_link(); ?>
-							</div>
-						</nav>
-                     </article>
+                     </article>                  
                      <?php
 					 	}
                      }
                      ?>
                 </div><!-- .row .blogPage -->
             </div><!-- .col-xs-12 .blogSinglePage -->
+			<nav class="pagination">
+				<?php previous_post_link(); ?>
+					<a href="<?php bloginfo('url'); ?>/?p=6"><i class="fa fa-th-large"></i></a>
+				<?php next_post_link(); ?>							
+			</nav>
         </div><!-- .row -->
     </section><!-- .container .blogPage -->
 <?php get_footer(); ?>
