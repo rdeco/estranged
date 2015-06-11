@@ -49,7 +49,7 @@
             </div> <!-- .col-xs-12 .productPage -->
         </div> <!-- .row -->            
     </div> <!-- .container -->
-    <nav class="archive-portfolio pagination">
+    <nav class="pagination">
         <?php previous_post_link(); ?>  
         	<a href="<?php bloginfo('url'); ?>/?p=51"><i class="fa fa-th-large"></i></a>
         <?php next_post_link(); ?>
