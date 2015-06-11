@@ -1,27 +1,22 @@
-<?php get_header(); ?>			  	
-	<!-- start of front page content-->			  	
-	<section class="page-img col-xs-12">     		
-		<div class="row">
-			<div class="page col-md-6 col-md-offset-6">
-				<?php 
-					if(have_posts()) {
-						while(have_posts()) {
-							the_post();
-				?>
-				<div class="row">
-					<h1 class="page-h1">
-						<?php the_title(); ?>
-					</h1>
-					<div class="page-para">
-						<?php the_content(); ?>	 	
-					</div>
-				</div>
-				<?php
-						}	
-					}	
-				?>
-				
-			</div>
-		</div><!-- .row -->
-	</section><!-- .col-xs-12 -->
+<?php get_header(); ?>
+    <div class="container aboutPage">
+        <div class="row">
+            <article class="col-xs-12 aboutPage">    
+	            <h1 class="about-title"><?php the_title(); ?></h1>   
+                <?php
+                if (have_posts()) {
+                    while(have_posts()) {
+                        the_post();
+                ?>
+                <p class="aboutText">
+                   <?php the_content(); ?>
+                </p>
+
+                 <?php
+                     }
+                 }
+                 ?>
+            </article> <!-- .col-sm-10 .col-sm-offset-1 .col-xs-12 .aboutPage -->
+        </div><!-- .row -->
+    </div> <!-- .container .aboutPage -->
 <?php get_footer(); ?>
