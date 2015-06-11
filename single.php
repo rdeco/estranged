@@ -21,7 +21,7 @@
                         <p class="year"><?php the_time('Y'); ?></p>
                     </div>
 
-                    <article class="col-xs-10 blogPage">
+                    <article class="col-xs-8 blogPage">
                         <h1 class="blogTitle blogPage"><?php the_title(); ?></h1>
                         <div class="visible-xs-inline">
                             <p class="xs-date"><?php the_time('M j, Y'); ?> </p>
