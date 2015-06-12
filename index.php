@@ -7,8 +7,7 @@
 	             	<?php
 				 		$args = array(
 				 			'post_type' => 'portfolio',
-				 			'category_name' => 'featured',
-				 			'posts_per_page' => 3,	
+				 			'posts_per_page' => 6,	
 	                );
 	                $portfolio = new WP_Query( $args );
 	                    while( $portfolio->have_posts() ) :
