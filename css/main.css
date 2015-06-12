@@ -16,8 +16,6 @@ body{
     overflow-x: hidden;
 }
 
-article.cbp-so-side.cbp-so-side-left a,
-article.cbp-so-side.cbp-so-side-right a,
 a:hover,
 a.blogArchive,
 a.company:hover,
@@ -27,16 +25,15 @@ a.info:hover,
 a.website:hover,
 .cbp-af-header nav a:hover,
 .commentlist .commentmetadata a:hover,
-div.alignright.blog-archive a:hover,
 div.alignleft.blog-archive a:hover,
-div.navigation div.alignright a:hover,
+div.alignright.blog-archive a:hover,
 div.navigation div.alignleft a:hover,
+div.navigation div.alignright a:hover,
 div.pager.blogArchive a:hover,
 div.pager.blogPage a:hover,
 div.reply a:hover,
 form#commentform p a:hover,
 li.product-info-website a:hover,
-ul.pager.productPage a:hover,
 .pagination a:hover,
 ul.blogTags a:hover,
 ul.monthlyList.sidebar li a:hover,
@@ -46,9 +43,6 @@ ul.pager.productPage a:hover{
 }
 
 
-div.popover-content,
-article.cbp-so-side.cbp-so-side-left a:hover,
-article.cbp-so-side.cbp-so-side-right a:hover,
 a.blogArchive:hover,
 a.company,
 a.contactLink,
@@ -57,13 +51,14 @@ a.info,
 a.website,
 .cbp-af-header nav a,
 .commentlist .commentmetadata a,
-div.alignright.blog-archive a,
 div.alignleft.blog-archive a,
-div.navigation div.alignright a,
+div.alignright.blog-archive a,
 div.navigation div.alignleft a,
-div.pager.blogPage a,
-div.reply a,
+div.navigation div.alignright a,
 div.pager.blogArchive a,
+div.pager.blogPage a,
+div.popover-content,
+div.reply a,
 form#commentform p a,
 li.product-info-website a,
 .pagination a, 
@@ -74,10 +69,6 @@ ul.pager.productPage a,
 ul.yearlyList.sidebar li a {
     color: #aaa;
     text-decoration: none;
-}
-
-a img.profilePic:hover{
-    opacity: 0.7;
 }
 
 h3.popover-title{
@@ -93,8 +84,8 @@ h3.popover-title{
 }
 
 .pagination{
+	margin: -7% auto 2% auto;
     width: 100%;
-    margin: -7% auto 2% auto;
     font-size: 1.5em;
     text-align: center;
 }
@@ -163,6 +154,10 @@ h3.popover-title{
 
 img.logo{
     max-width: 400px;
+}
+
+img.logo:hover{
+     opacity: 0.7;
 }
 
 .profilePic.hidden-xs.hidden-sm{
@@ -469,6 +464,10 @@ img.index-thumb{
     transform: translateX(0px);
     opacity: 1;  
 }
+
+a figure:hover{
+	opacity: 0.7;
+}
 /*--------------------------------------- END OF FRONt PAGE CONTENT ---------------------------------------*/
 
 /*------------------------------------- START OF PORTFOLIO ARCHIVE PAGE CONTENT -------------------------------------*/
@@ -491,6 +490,14 @@ img.index-thumb{
     -moz-box-shadow: 1px 1px 2px #e6e6e6;
     box-shadow: 1px 1px 2px #c7c7c7;
     cursor: default;
+}
+
+.view-fifth h2 {
+    background: rgba(255, 255, 255, 0.5);
+    color: #000;
+    -webkit-box-shadow: 0px 1px 3px rgba(159, 141, 140, 0.5);
+    -moz-box-shadow: 0px 1px 3px rgba(159, 141, 140, 0.5);
+    box-shadow: 0px 1px 3px rgba(159, 141, 140, 0.5);
 }
 
 .view-fifth img {
@@ -521,14 +528,6 @@ img.index-thumb{
     transition: all 0.4s ease-in-out;;
 }
 
-.view-fifth h2 {
-    background: rgba(255, 255, 255, 0.5);
-    color: #000;
-    -webkit-box-shadow: 0px 1px 3px rgba(159, 141, 140, 0.5);
-    -moz-box-shadow: 0px 1px 3px rgba(159, 141, 140, 0.5);
-    box-shadow: 0px 1px 3px rgba(159, 141, 140, 0.5);
-}
-
 .view-fifth p {
     margin: 0% 0% 5% 20%;
     max-width: 60%;
@@ -544,6 +543,15 @@ img.index-thumb{
     transition: all 0.5s linear;
 }
 
+.view-fifth:hover img {
+    -webkit-transform: translateX(400px);
+    -moz-transform: translateX(400px);
+    -o-transform: translateX(400px);
+    -ms-transform: translateX(400px);
+    transform: translateX(400px);
+    transition-delay: 0.1s;
+}
+
 .view-fifth:hover .mask {
     width: 500px;
     height: 300px;	
@@ -552,15 +560,6 @@ img.index-thumb{
     -o-transform: translateX(-85px);
     -ms-transform: translateX(-85px);
     transform: translateX(-85px);
-}
-
-.view-fifth:hover img {
-    -webkit-transform: translateX(400px);
-    -moz-transform: translateX(400px);
-    -o-transform: translateX(400px);
-    -ms-transform: translateX(400px);
-    transform: translateX(400px);
-    transition-delay: 0.1s;
 }
 
 .view-fifth:hover p {
@@ -832,7 +831,7 @@ hr.style.single-blog {
 }
 /*--------------------------------------- END OF BLOG PAGE CONTENT ---------------------------------------*/
 
-/*--------------------------------------- START OF TAG & CATEGORY ARCHIVE CONTENT ---------------------------------------*/
+/*--------------------------------------- START OF TAG ARCHIVE CONTENT ---------------------------------------*/
 hr.tag,
 hr.catHR{
     border: 1.8px dotted rgba(209, 223, 223, 0.5);
@@ -874,14 +873,14 @@ p.catHeader{
 /*--------------------------------------- END OF ABOUT PAGE CONTENT ---------------------------------------*/
 
 /*--------------------------------------- START OF CONTACT PAGE CONTENT ---------------------------------------*/
-span.wpcf7-form-control-wrap.your-name input,
-span.wpcf7-form-control-wrap.your-email input,
-span.wpcf7-form-control-wrap.your-subject input,
-span.wpcf7-form-control-wrap.your-message textarea{
-	width: 100%;
-    background-color: rgb(209, 223, 223);
-    font-style: italic;
-    font-weight: 200;
+.contact.col-sm-6.col-sm-offset-3{
+	margin-top: 30%;
+	margin-bottom: 5%;
+	font-size: 1.3em;
+}
+
+input{
+	height: 40px;
 }
 
 input.wpcf7-form-control.wpcf7-submit{
@@ -893,6 +892,16 @@ input.wpcf7-form-control.wpcf7-submit{
 
 input.wpcf7-form-control.wpcf7-submit:hover{
     color: rgb(209, 223, 223);
+}
+
+span.wpcf7-form-control-wrap.your-name input,
+span.wpcf7-form-control-wrap.your-email input,
+span.wpcf7-form-control-wrap.your-subject input,
+span.wpcf7-form-control-wrap.your-message textarea{
+	width: 100%;
+    background-color: rgb(209, 223, 223);
+    font-style: italic;
+    font-weight: 200;
 }
 /*--------------------------------------- END OF CONTACT PAGE CONTENT ---------------------------------------*/
 
@@ -994,15 +1003,6 @@ ul.ul-404{
 @media only screen and (min-width: 75.000em) and (max-width: 93.750em) {
 
 	/*------------ start of header/nav  ---------------*/	
-	div.header.opacity{
-		margin-top: -25%;
-	}
-	
-	header.cbp-af-header img.header-img{
-		width: 100%;
-		height: auto;
-	}
-	
 	.cbp-af-header nav a{
 		font-size: 1.6em;
 	}
@@ -1014,38 +1014,51 @@ ul.ul-404{
 	.cbp-af-header.cbp-af-header-shrink nav{
 		margin: -17% 0% 0% 46%;
 	}
-
-	/*------------ end of header/nav  ---------------*/		
-	/*------------ start of front page ---------------*/
 	
-	div.cbp-so-scroller{
+	div.header.opacity{
+		margin-top: -25%;
+	}
+	
+	header.cbp-af-header img.header-img{
+		width: 100%;
+		height: auto;
+	}	
+	/*------------ end of header/nav  ---------------*/	
+	
+	/*------------ start of footer ---------------*/	
+	div.col-xs-8.col-xs-0ffset-1.col-md-6.lrgMedia{
+		margin: 0% 0% 0% -3%;
+	}	
+	
+	.col-md-3.smMedia.hidden-xs.hidden-sm{
+		margin-left: -2%;
+	}
+	/*------------ end of footer ---------------*/	
+		
+	/*------------ start of front page ---------------*/	
+	.cbp-so-scroller{
 		margin-top: 25%;
 	}
 
+	.cbp-so-section h2{
+		font-size: 3em;
+	}
 	/*------------ end of front page ---------------*/		
 
-	/*------------ start of portfolio page ---------------*/		
-			
-	div.col-xs-12.portfolioPage{
-	    margin: 37% 0% 3% 0%;
-	}
-	
-	div.col-xs-12.archiveTitle{
-		margin-top: 23%;
-		margin-bottom: -35%;
-	}
-	
-	/*------------ end of portfolio page ---------------*/
+	/*------------ start of archive portfolio page ---------------*/		
+	.archiveTitle{
+		margin-top: 25%;
+	}	
+	/*------------ end of archive portfolio page ---------------*/
 	
 	/*------------ start of single portfolio page ---------------*/	
-	div.col-xs-12.productPage {
+	.col-xs-12.productPage {
 		margin: 35% auto 17% auto;
 	}
 	/*------------ start of single portfolio page ---------------*/	
 	
-	/*------------ start of blog archive page ---------------*/	
-	
-	div.col-lrg-2.col-lrg-offset-10.col-xs-12.blogArchivePage	{
+	/*------------ start of blog archive page ---------------*/		
+	div.col-lrg-2.col-lrg-offset-10.col-xs-12.blogArchivePage{
 		margin:6% -1% -18% 72%;
 	}
 	
@@ -1055,19 +1068,23 @@ ul.ul-404{
 	/*------------ end of blog archive page ---------------*/		
 	/*------------ start of blog page ---------------*/		
 	
-	div.col-xs-12.blogSinglePage{
-		margin-left: -9%;
-		margin-top: -12%;
+	.col-xs-12.blogSinglePage{
+		margin-top: 35%;
 	}
 	/*------------ end of blog  page ---------------*/
+	
 	/* -------------- start of about page ----------------*/
-	div.col-sm-10.col-sm-offset-1.col-xs-12.aboutPage {
+	.about-title{
+		margin-top: -23%;
+		margin-bottom: 10%;
+	}
+	
+	.col-sm-10.col-sm-offset-1.col-xs-12.aboutPage {
 	    margin-top: 32%;
 	    font-size: 1.2em;
-
 	}
-	/* -------------- end of about page ----------------*/	
-
+	/*-------------- end of about page ----------------*/	
+	/*--------------- start of 404 page ------------------*/
 	div.col-xs-12.page404{
 		margin-top: 35%;	
 	}
@@ -1080,35 +1097,46 @@ ul.ul-404{
 	hr.catHR{
 		margin: 2% -7% 10% 3%;
 	}
-	
-
+	/*--------------- end of 404 page ------------------*/	
 }
-
 /*------------ END OF MIN-WIDTH 1200px and MAX-WIDTH 1500px (bootstrap lrg | desktop)-------------*/
 
 /*------------ START OF MIN-WIDTH 992px and MAX-WIDTH 1199px (bootstrap md | ipad landscape)-------------*/
 
 @media only screen and (min-width: 62.000em) and (max-width: 74.938em) {
 	
-	/*------------ start of header/nav  ---------------*/	
-	div.header.opacity{
-		margin-top: -25%;
-	}
-	
-		
+	/*------------ start of header/nav  ---------------*/			
 	.cbp-af-header h1, 
 	.cbp-af-header nav a{
 		-webkit-transition: all 0.1s;
 	    -moz-transition: all 0.1s;
 	    transition: all 0.1s;
 	}
-
 	
+	.cbp-af-header.cbp-af-header-shrink nav{
+		margin: -17% 0% 0% 44%;
+	}	
+		
+	.cbp-af-header.cbp-af-header-shrink nav ul li a{
+		font-size: initial;
+	}
+	
+	.cbp-af-header nav{
+		margin: -8% 0% 0% 15%;
+	}
+			
+	.cbp-af-header nav a{
+		font-size: 1.3em;
+	}
+			
+	div.header.opacity{
+		margin-top: -25%;
+	}
+		
 	header.cbp-af-header{
 	    -webkit-transition: height 0.1s;
 	    -moz-transition: height 0.1s;
 	    transition: height 0.1s;	
-	
 	}
 
 	header.cbp-af-header img.header-img{
@@ -1116,36 +1144,18 @@ ul.ul-404{
 		height: auto;
 	}
 	
-	.cbp-af-header nav a{
-		font-size: 1.3em;
-	}
-		
-	.cbp-af-header.cbp-af-header-shrink nav ul li a{
-		font-size: initial;
-	}
-	
-	.cbp-af-header.cbp-af-header-shrink nav{
-		margin: -17% 0% 0% 44%;
-	}
-	
 	img.header-gravatar{
+		margin-left: -21%;
 		width: 50%;
 		height: auto;
-		margin-left: -21%;
 	}
 	
 	img.logo{
 		margin-left: 7%;
 	}
-	
-	.cbp-af-header nav{
-		margin: -8% 0% 0% 15%;
-	}
-
 	/*------------ end of header/nav  ---------------*/	
 		
-	/*------------ start of footer  ---------------*/	
-		
+	/*------------ start of footer  ---------------*/			
 	div.col-md-3.smMedia.hidden-xs.hidden-sm {
 		display: none;
 	}
@@ -1164,31 +1174,41 @@ ul.ul-404{
 	}
 	/*------------ end of footer  ---------------*/		
 	
+	/*------------ start of sidebar ----------------*/
+	div.sidebar{
+		margin-left: 3%;
+	}
+	/*------------ end of sidebar ----------------*/	
+	
 	/*------------ start of portfolio archive page  ---------------*/		
 	div.col-xs-12.portfolioPage{
 	    margin: 37% 0% 3% 0%;
 	}
 	
-	div.col-xs-12.archiveTitle{
-		margin-top: 19%;
-
+	h1.archiveTitle{
+		margin-top: 20%;
+		margin-bottom: -27%;
 	}
 	
 	.view{
+	    position: relative;	
+	    border: 10px solid #e6e6e6;	 
+	    margin: 5px;	    
 	    width: 32%;
 	    height: 300px;
-	    margin: 5px;
 	    float: left;
-	    border: 10px solid #e6e6e6;
-	    overflow: hidden;
-	    position: relative;
 	    text-align: center;
+		overflow: hidden;
 	    -webkit-box-shadow: 1px 1px 2px #e6e6e6;
 	    -moz-box-shadow: 1px 1px 2px #e6e6e6;
 	    box-shadow: 1px 1px 2px #c7c7c7;
 	    cursor: default;
 	    background: url(../imgs/portfolioMask.jpg) no-repeat;
 	}
+	
+	.view-fifth p{
+		margin: 0% 0% 1% 20%;
+	}	
 	
 	.view-fifth:hover .mask{
 		width: 415px;
@@ -1198,24 +1218,27 @@ ul.ul-404{
 	.view-fifth:hover p{
 		text-align:justify;
 	}	
-	
 	/*------------ end of portfolio archive page  ---------------*/
+	
 	/*------------ start of single portfolio page ---------------*/	
-	div.col-xs-12.productPage {
-		margin: 30% auto 17% -2%;
+	.col-xs-12.productPage {
+		margin: 30% auto 10% -2%;
 	}
 	
-	div.col-md-6.col-xs-12.single-portfolio{
+	.col-md-6.col-xs-12.single-portfolio{
 		left: 0;
 	}
-	/*------------ end of single portfolio page ---------------*/		
 	
+	div.date{
+		margin: -5% 0% 0% 12%;
+	}
+	/*------------ end of single portfolio page ---------------*/			
 	
-	/*------------ start of blog archive page  ---------------*/
-	
+	/*------------ start of blog archive page  ---------------*/	
 	article.col-sm-6.blogArticle{
 		font-size: 1.1em;
 	}
+	
 	div.col-lrg-2.col-lrg-offset-10.col-xs-12.blogArchivePage	{
 		margin: 25% -1% -18% 74%;
 	}
@@ -1224,8 +1247,7 @@ ul.ul-404{
 		margin: 30% 0% 15% -7%;
 		width: 95%;
 		height: auto;
-	}
-	
+	}	
 	
 	figure.col-sm-4.blogArchive	{
 		margin-bottom: 15%;
@@ -1237,6 +1259,13 @@ ul.ul-404{
 	}	
 	/*------------ end of blog archive page  ---------------*/	
 	
+	/*------------ start of blog date/tag archive page  ---------------*/	
+	p.catHeader,
+	p.tagHeader{
+		margin-top: 12%;
+	}
+	/*------------ end of blog date/tag archive page  ---------------*/	
+	
 	/*------------ start of blog page  ---------------*/	
 	article.col-xs-10.blogPage p img{
 		width: 95%;
@@ -1244,20 +1273,16 @@ ul.ul-404{
 	}
 	
 	div.col-xs-12.blogSinglePage{
-		margin: -9% 0% 0% -3%;
-		width: 85%;
-		
+		margin: 30% 0% 0% -3%;		
 	}
 	/*------------ end of blog  page  ---------------*/		
 	
-	/*------------ start of about me page  ---------------*/
-
+	/*------------ start of page  ---------------*/
 	div.col-sm-10.col-sm-offset-1.col-xs-12.aboutPage {
 	    margin-top: 30%;
-	}
-		
-	/*------------ end of about me page  ---------------*/	
-	
+	}		
+	/*------------ end of page  ---------------*/	
+
 	div.col-xs-12.page404{
 		margin-top: 30%;
 	}
@@ -1265,21 +1290,15 @@ ul.ul-404{
 	div.col-xs-12.dateArchive{
 		margin: 20% 0% 15% 0%;
 		width: 80%;
-	}
-	
-	
+	}	
 }
 /*------------ END OF MIN-WIDTH 992px and MAX-WIDTH 1199px (bootstrap md | ipad landscape)-------------*/
 
 /*------------ START OF MIN-WIDTH 768px and MAX-WIDTH 991px (bootstrap sm | ipad portrait)-------------*/
 
 @media only screen and (min-width: 48.000em) and (max-width: 61.938em) {
-	
-	
-		
-	/*------------ start of header/nav  ---------------*/	
-	
 			
+	/*------------ start of header/nav  ---------------*/				
 	.cbp-af-header h1, 
 	.cbp-af-header nav a{
 		-webkit-transition: all 0.1s;
@@ -1287,78 +1306,67 @@ ul.ul-404{
 	    transition: all 0.1s;
 	}
 
-	
-	header.cbp-af-header{
-	    -webkit-transition: height 0.1s;
-	    -moz-transition: height 0.1s;
-	    transition: height 0.1s;	
-	
-	}
-	
-	div.header.opacity{
-		margin-top: -25%;
-	}	
-	
-	header.cbp-af-header img.header-img{
-		width: 100%;
-		height: auto;
-	}
-	
 	.cbp-af-header a.logo{
 		margin: -7.5% auto 0% 3%;
-	}
-		
-	.cbp-af-header nav a{
-		font-size: 2em;
-	}
-		
-	.cbp-af-header.cbp-af-header-shrink nav ul li a{
-		font-size: 1.6em;
 	}
 	
 	.cbp-af-header.cbp-af-header-shrink nav{
 		margin: -9% auto 0% auto;
-	}
+	}	
 	
-	img.header-gravatar{
-		width: 50%;
-		height: auto;
-		margin-left: -21%;
+	.cbp-af-header.cbp-af-header-shrink nav ul li a{
+		font-size: 1.6em;
 	}
-
-	
+		
 	.cbp-af-header nav{
 		margin: 0% auto;
 		display: block;
 		left: 0;
 	}
-	
+		
+	.cbp-af-header nav a{
+		font-size: 2em;
+	}		
+
 	div.header.opacity{
+		margin-top: -25%;
 		height: 200px;
 	}
 	
-
-
+	header.cbp-af-header{
+	    -webkit-transition: height 0.1s;
+	    -moz-transition: height 0.1s;
+	    transition: height 0.1s;	
+	}
+		
+	header.cbp-af-header img.header-img{
+		width: 100%;
+		height: auto;
+	}
+		
+	img.header-gravatar{
+		width: 50%;
+		height: auto;
+		margin-left: -21%;
+	}
 	/*------------ end of header/nav  ---------------*/	
 		
-	/*------------ start of footer  ---------------*/	
-		
+	/*------------ start of footer  ---------------*/			
 	div.col-md-3.smMedia.hidden-xs.hidden-sm {
 		display: none;
-	}
-	
-
-	img.socialMediaBtn{
-		width: 45px;
-		height: auto;
 	}
 	
 	div.col-xs-8.col-xs-0ffset-1.lrgMedia{
 		margin: 0;
 	}
 	
-	
-	/*------------ end of front page  ---------------*/	
+	img.socialMediaBtn{
+		width: 45px;
+		height: auto;
+	}
+	/*------------ end of footer page  ---------------*/
+			
+	/*------------ start of front page  ---------------*/	
 	.cbp-so-section h2{
 		font-size: 3em;
 	}
@@ -1382,18 +1390,17 @@ ul.ul-404{
 	
 	div.col-xs-12.archiveTitle{
 		margin-top: 27%;
-
 	}
 	
 	.view{
+	    position: relative;	
+	    border: 10px solid #e6e6e6;	
+	    margin: 5px;	        	
 	    width: 48%;
 	    height: 300px;
-	    margin: 5px;
 	    float: left;
-	    border: 10px solid #e6e6e6;
-	    overflow: hidden;
-	    position: relative;
 	    text-align: center;
+	    overflow: hidden;	    
 	    -webkit-box-shadow: 1px 1px 2px #e6e6e6;
 	    -moz-box-shadow: 1px 1px 2px #e6e6e6;
 	    box-shadow: 1px 1px 2px #c7c7c7;
@@ -1402,32 +1409,35 @@ ul.ul-404{
 	}
 	
 	.view-fifth:hover .mask{
+		margin: 0% 0% 0% 11%;		
 		width: 415px;
-		margin: 0% 0% 0% 11%;
 	}
 	
 	.view-fifth:hover p{
 		text-align:justify;
 	}	
-	
+			
+	.view-fifth p{
+		margin: 0% 0% 1% 20%;
+	}
 	/*------------ end of portfolio archive page  ---------------*/
 	
 	/*------------ start of single portfolio page ---------------*/	
-	div.col-xs-12.productPage {
-		margin: 30% auto 17% -2%;
-	}
-	
-	div.col-md-6.col-xs-12.single-portfolio{
-		text-align:center;
-		left: 0;
-	}
-	
 	article.col-md-6.col-xs-12.single-portfolio{
 		margin: 0% 0% 0% 2%;
 	}
 	
-	article.col-md-6.col-xs-12.single-portfolio h1{
-		text-align: center
+	.col-md-6.col-xs-12.single-portfolio{
+		left:0;	
+	}
+	
+	.col-md-6.col-xs-12.single-portfolio figure img{
+		width: 100%;
+		height: 100%;
+	}
+	
+	div.col-xs-12.productPage {
+		margin: 30% auto 17% -2%;
 	}
 	
 	div.addthis_sharing_toolbox{
@@ -1440,20 +1450,29 @@ ul.ul-404{
 	
 	div.productInfo{
 		margin-left: auto;	
+	}
+			
+	div.productInfo,
+	h1.productPageTitle{
 		text-align: center;
 	}
-	
-	li.productInfo1, li.productInfo2, li.productInfo3{
-		margin: 1% auto 0% auto;
-	}
-	
+
 	span.date{
 		display: none;
 	}
 	/*------------ end of single portfolio page ---------------*/
+	
 	/*------------ start of sidebar  ---------------*/	
-	h2.month.sidebar, h2.year.sidebar, h2.categories.sidebar{
+	h2.categories.sidebar,
+	h2.month.sidebar, 
+	h2.year.sidebar{
 		display:inline-block;
+	}
+			
+	h2.categories.sidebar{
+		margin: -4% 0% 2% 0%;
+		float: left;
+		clear: both;
 	}
 	
 	ul.monthlyList.sidebar,
@@ -1468,15 +1487,9 @@ ul.ul-404{
 		float:left;
 		margin: -4% 0% 2% 5%;
 	}	
-	
-	h2.categories.sidebar{
-		margin: -4% 0% 2% 0%;
-		float: left;
-		clear: both;
-	}
-	/*------------ end of sidebar  ---------------*/		
-	/*------------ start of blog archive page  ---------------*/
-	
+	/*------------ end of sidebar  ---------------*/
+			
+	/*------------ start of blog archive page  ---------------*/	
 	article.col-sm-6.blogArticle{
 		font-size: 1.1em;
 	}
@@ -1484,55 +1497,399 @@ ul.ul-404{
 	div.col-lrg-2.col-lrg-offset-10.col-xs-12.blogArchivePage	{
 		margin: 28% 0% 0% 0%;
 		position: inherit;
-
 	}
 	
 	div.col-xs-12.blogArchive{
 		margin: 10% 0% 15% 0%;
-
-	}
-	
+	}	
 	
 	figure.col-sm-4.blogArchive	{
-		margin-bottom: 20%;
+		margin-bottom: 25%;
 	}
 
 	figure.col-sm-4.blogArchive img{
+		margin-top: 10%;
 		width: 95%;
 		height: auto;
 	}	
 	/*------------ end of blog archive page  ---------------*/	
 	
 	/*------------ start of blog page  ---------------*/	
-	article.col-xs-10.blogPage p img{
-		width: 95%;
-		height: auto;
+	.col-xs-8.blogPage{
+		width: 80%;
 	}
 	
 	div.col-xs-12.blogSinglePage{
-		margin: -33% 0% 0% 0%;
-		
+		margin: 0%;		
 	}
 	/*------------ end of blog  page  ---------------*/		
 	
-	/*------------ start of about me page ---------------*/	
+	/* -------------- start of 404 page ----------------*/	
+	div.col-xs-12.page404{
+		margin-top: 25%;
+	}
+	
+	img.img-404{
+		width: 90%;
+		height: auto;
+	}		
+	/*-------------- end of 404 page ----------------*/
+	
+	/*-------------- start of blog date archive page ----------------*/	
+	div.col-xs-12.dateArchive{
+		margin: 0% 0% 5% 0%;
+	}
+	
+	p.catHeader {
+		width: 70%;
+		margin-left: 14%;
+	}
+	/*-------------- end of blog date archive page ----------------*/			
+}
+/*------------ END OF MIN-WIDTH 768px and MAX-WIDTH 991px (bootstrap sm | ipad portrait)-------------*/
 
+/*------------ START OF MIN-WIDTH 569px and MAX-WIDTH 737px ( iphone6, iphone6+ landscape)-------------*/
+
+@media only screen and (min-width: 35.563em) and (max-width: 46.063em) {
+				
+	/*------------ start of header/nav  ---------------*/	
+	.cbp-af-header a.logo{
+		margin: -7.5% auto 0% 3%;
+		float:left;
+		clear: both;
+	}
+			
+	.cbp-af-header.cbp-af-header-shrink nav ul li a{
+		font-size: 1.6em;
+	}
 	
-	div.col-sm-10.col-sm-offset-1.col-xs-12.aboutPage div.wp-caption  img,
-		article.col-xs-10.blogPage div.wp-caption img{
+	.cbp-af-header.cbp-af-header-shrink nav{
+		margin: -12% auto 0% auto;
+	}
+	
+	.cbp-af-header nav{
+		margin: 0% auto;
+		display: block;
+		left: 0;
+	}
+	
+	.cbp-af-header nav a{
+		font-size: 1.8em;
+	}
+	/*------------ end of header/nav  ---------------*/	
+		
+	/*------------ start of footer  ---------------*/			
+	div.col-xs-8.col-xs-0ffset-1.lrgMedia{
+		margin: 0;
+	}
+	
+	img.socialMediaBtn{
+		width: 40px;
+	}
+	/*------------ end of footer  ---------------*/
+	
+	/*------------ start of sidebar ---------------*/	
+	div.sidebar{
+		margin-top: 10%;
+		margin-bottom: 10%;
+	}
+	
+	h2.categories.sidebar{
+		margin: -4% 0% 2% 0%;
+		float: left;
+		clear: both;
+	}
+	
+	ul.monthlyList.sidebar,
+	ul.catList.sidebar{
+		margin: -1% 0% 5% 6%;
+	}
+	
+	ul.monthlyList.sidebar li,
+	ul.catList.sidebar li{		
+		margin: -4% 0% 2% 5%;
+	}	
+	/*------------ end of sidebar ---------------*/
+			
+	/*------------ start of front page  ---------------*/	
+	.cbp-so-section h2{
+		font-size: 2.6em;
+	}
+	
+	.cbp-so-section p{
+		font-size: 1.2em;
+		text-align: justify;
+	}
+	/*------------ end of front page  ---------------*/
+	
+	/*------------ start of portfolio archive page  ---------------*/		
+	.archiveTitle{
+		font-size: 3em;
+	}	
+			
+	div.col-xs-12.archiveTitle h1{
+		font-size: 3em;
+	}
+		
+	.view{
+	    margin: 5px;		
+	    width: 48%;
+	    height: 300px;
+	}
+	
+	.view-fifth:hover .mask{
+		width: 380px;
+		margin: 0% 0% 0% 15%;
+	}	
+
+	.view-fifth p{
+		margin: 0% 0% 1% 20%;
+	}	
+	/*------------ end of portfolio archive page  ---------------*/
+	
+	/*------------ start of single portfolio page ---------------*/		
+	div.col-md-6.col-xs-12.single-portfolio{
+		left: 0;
+	}
+	
+	div.col-md-6.col-xs-12.single-portfolio img{
+		margin-left: 8%;		
+		width: 80%;
+		height: auto;	
+	}	
+	
+	h1.productPageTitle{
+		text-align: center;
+	}
+	/*------------ end of single portfolio page ---------------*/
+		
+	/*------------ start of blog archive page  ---------------*/	
+	article.col-sm-6.blogArticle{
+		font-size: 1.1em;
+		margin:0% 0% 10% 16%;
+		width:80%
+	}
+	
+	div.col-xs-12.blogArchive{
+		margin: 0% 0% 10% 0%;
+	}	
+	
+	div.col-lrg-2.col-lrg-offset-10.col-xs-12.blogArchivePage{
+		margin: 28% 0% 0% 0%;
+	}
+	/*------------ end of blog archive page  ---------------*/	
+	
+	/*------------ start of blog date archive page  ---------------*/	
+	.blogArchive{
+		margin-top: -5%;
+	}
+			
+	div.col-xs-12.dateArchive{
+		margin: 0% 0% 5% 3%;
+	}
+	
+	p.catHeader {
+		margin: 0% 0% 0% -7%;
+		width: 70%;
+		font-size: 1.3em;
+	}	
+	/*------------ end of blog date archive page  ---------------*/	 
+
+	/*------------ start of blog page  ---------------*/	
+	div.col-xs-12.blogSinglePage{
+		margin: 0%;		
+	}
+	
+	.col-xs-8.blogPage{
 		width: 100%;
-		height: auto;
+		font-size: 0.9em;
+		padding: 0% 5%;
 	}
 	
-	div.col-sm-10.col-sm-offset-1.col-xs-12.aboutPage div.wp-caption p.wp-caption-text,
-	article.col-xs-10.blogPage div.wp-caption p.wp-caption-text{
-		width: 450px;
+	form#commentform input#submit {
+		margin: 0% 7% 0% 0%;		
+	}	
+	/*------------ end of blog  page  ---------------*/		
+	   
+	/* -------------- start of 404 page ----------------*/
+	div.col-xs-12.page404{
+		margin-top: 25%;
+	}
+	
+	img.img-404{
+		width: 90%;
 		height: auto;
+	}			
+	/* -------------- end of 404 page ----------------*/
+}
+/*------------ END OF MIN-WIDTH 569px and MAX-WIDTH 737px (iphone6, iphone6+ landscape)-------------*/
+
+/*------------ START OF MIN-WIDTH 416px and MAX-WIDTH 568px ( iphone4, iphone5 landscape)-------------*/
+
+@media only screen and (min-width: 26.000em) and (max-width: 35.500em) {
+	
+	/*------------ start of header/nav  ---------------*/	
+	.cbp-af-header a.logo{
+		margin: -14.5% auto 0% auto;
+		float:left;
+		clear: both;
 	}
 		
-	/*------------ end of about me page  ---------------*/	
-	/* -------------- start of 404 page ----------------*/
+	.cbp-af-header.cbp-af-header-shrink nav ul li a{
+		font-size: 1.2em;
+	}
+	
+	.cbp-af-header.cbp-af-header-shrink{
+		height: 60px;
+	}
+	
+	.cbp-af-header.cbp-af-header-shrink nav{
+		margin: -18% auto 0% auto;
+	}
+	
+	.cbp-af-header nav{
+		margin: -5% auto ;
+		display: block;
+		left: -14px;
+	}
+	
+	.cbp-af-header nav a{
+		font-size: 1.4em;
+	}
+	
+	div.col-xs-3.socialBtns{
+		width: 20%;
+	}
+	
+	img.logo{
+		max-width: 300px;
+	}
+	/*------------ end of header/nav  ---------------*/	
 		
+	/*------------ start of footer  ---------------*/	
+	div.col-xs-8.col-xs-0ffset-1.lrgMedia{
+		margin: 0;
+	}
+	
+	img.socialMediaBtn{
+		width: 40px;
+	}	
+	/*------------ end of footer  ---------------*/
+			
+	/*------------ start of sidebar  ---------------*/	
+	div.sidebar{
+		margin-left: 5%;
+	}
+	
+	h1.archives.sidebar{
+		margin-bottom: 0%	
+	}
+	
+	ul.monthlyList.sidebar,
+	ul.catList.sidebar{
+		margin: -4% 0% 0% 10%;
+	}
+	
+	ul.monthlyList.sidebar li{		
+		margin: -3% -5% 1% 9%;
+	}
+	/*------------ end of sidebar  ---------------*/		
+	
+	/*------------ start of front page  ---------------*/	
+	.cbp-so-section h2{
+		font-size: 1.8em;
+	}
+	
+	.cbp-so-section p{
+		font-size: 1em;
+		text-align: justify;
+	}	
+	/*------------ end of front page  ---------------*/
+	
+	/*------------ start of portfolio archive page  ---------------*/			
+	.archiveTitle{
+		font-size: 2.5em;
+	}
+	
+	div.col-xs-12.archiveTitle h1{
+		font-size: 3em;
+	}
+	
+	.view{
+	    height: 300px;
+	    margin: 2% 10%;
+	}
+	
+	.view-fifth:hover .mask{
+		margin: 0%;
+	}
+	/*------------ end of portfolio archive page  ---------------*/
+	
+	/*------------ start of single portfolio page ---------------*/		
+	.col-md-6.col-xs-12 p{
+		font-size: 1.1em;
+	}
+	/*------------ end of single portfolio page ---------------*/
+	
+	/*------------ start of blog archive page  ---------------*/	
+	article.col-sm-6.blogArticle{
+		font-size: 1.1em;
+		margin: 6% 0% 10% 16%;
+	}
+	
+	.blogArchive{
+		margin-top: -5%;
+	}
+	
+	div.col-lrg-2.col-lrg-offset-10.col-xs-12.blogArchivePage	{
+		margin: 28% 0% 0% -3%;
+	}
+	
+	div.col-sm-2.blogDate{
+		font-size: 0.9em;
+	}
+
+	div.col-xs-12.blogArchive{
+		margin: 10% 0% 15% 0%;
+	}			
+			
+	div.col-xs-12.dateArchive{
+		margin: 0% 0% 5% 3%;
+	}
+	
+	p.catHeader {
+		margin: 10% 0% 5% -2%;
+		font-size: 1.2em;
+	}
+	/*------------ end of blog date archive page  ---------------*/	 
+	
+	/*------------ start of blog page  ---------------*/	
+	.col-xs-8.blogPage{
+		padding: 0% 5%;		
+		width: 100%;
+		font-size: 0.9em;
+	}
+		
+	div.col-xs-12.blogSinglePage{
+		margin-top: 5%;		
+	}
+s
+	form#commentform input#submit {
+		margin: -3% 0% 4% 0%;		
+	}
+	
+	p textarea#comment{
+		width: 100%;
+	}
+	/*------------ end of blog  page  ---------------*/	
+	
+	/*------------ start of page  ---------------*/		
+	.about-title{
+		font-size: 2em;
+	}
+	/*------------ end of page  ---------------*/
+				
+	/*-------------- start of 404 page ----------------*/
 	div.col-xs-12.page404{
 		margin-top: 25%;
 	}
@@ -1541,22 +1898,252 @@ ul.ul-404{
 		width: 90%;
 		height: auto;
 	}
-		
-	/* -------------- end of 404 page ----------------*/
 	
+	ul.ul-404{
+		width:90%;
+		text-align: left;
+	}
+	
+	h1.h1-404{
+		font-size: 3em;
+	}		
+	/*-------------- end of 404 page ----------------*/	
+}
+/*------------ END OF MIN-WIDTH 416px and MAX-WIDTH 568px (iphone4, iphone5 landscape)-------------*/
+
+/*------------ START OF MIN-WIDTH 320px and MAX-WIDTH 415px ( iphone4, iphone5, iphone6, iphone6+ portrait)-------------*/
+
+@media only screen and (min-width: 20.000em) and (max-width: 25.938em) {
+	
+	/*------------ start of header/nav  ---------------*/		
+	.cbp-af-header a.logo{
+		margin: -24% -5%;	
+	}
+		
+	.cbp-af-header.cbp-af-header-shrink nav ul li a{
+		font-size: 0.8em;
+	}
+	
+	.cbp-af-header.cbp-af-header-shrink{
+		height: 60px;
+	}
+	
+	.cbp-af-header.cbp-af-header-shrink nav{
+		margin: -26% -15%;
+	}
+		
+	.cbp-af-header nav{
+		margin:  0%;
+		display: block;
+	}
+	
+	.cbp-af-header nav a{
+		font-size: 1em;
+	}
+	
+	img.logo{
+		max-width: 300px;
+	}	
+	/*------------ end of header/nav  ---------------*/
+				
+	/*------------ start of footer  ---------------*/		
+	div.col-xs-3.socialBtns{
+		padding: 4%;
+		width: 100%;
+	}
+	
+	div.col-xs-8.col-xs-0ffset-1.lrgMedia {
+		display: none;
+	}
+	
+	img.socialMediaBtn{
+		width: 80px;
+	}
+		
+	nav.pagination{
+		font-size: 1em;
+	}
+
+	p.copyright{
+		margin-top: 4%;
+	}
+	/*------------ end of footer   ---------------*/	
+	
+	/*------------ start of sidebar  ---------------*/	
+	div.sidebar{
+		margin-left: 5%;
+	}
+	
+	ul.monthlyList.sidebar,
+	ul.catList.sidebar{
+		margin: 1% 0% 0% -20%;
+	}
+	
+	ul.monthlyList.sidebar li{		
+		margin: -3% -5% 4% 9%;
+	}
+	/*------------ end of sidebar  ---------------*/	
+			
+	/*------------ start of front page  ---------------*/		    
+    .cbp-so-scroller{
+		width: 300px;	
+	}
+		
+    .cbp-so-section h2{
+	    font-size: 1.4em;
+    }
+    
+    .cbp-so-section p{
+    	display: none;  
+    }
+	/*------------ end of front page  ---------------*/
+	
+	/*------------ start of portfolio archive page  ---------------*/		
+	.archiveTitle{
+		font-size: 2.5em;
+	}
+	
+	div.col-xs-12.archiveTitle h1{
+		font-size: 3em;
+	}
+	
+	.view{
+		width: 100%;
+	    height: 300px;
+	    margin: 2% 0%;
+	}
+	
+	.view-fifth:hover .mask{
+		margin: 0% 4%;
+		width: 30em;
+	}
+	
+	.view-fifth:hover p{
+		font-size: 0.8em;	
+	}
+	
+	.view-fifth p{
+		width: 100%;
+	}
+	/*------------ end of portfolio archive page  ---------------*/
+		
+	/*------------ start of single portfolio page ---------------*/		
+	h1.productPageTitle{
+		font-size: 1.8em;
+	}
+
+	span.company, 
+	span.date,
+	span.website, {
+		font-size: 1em;
+	}
+	/*------------ end of single portfolio page ---------------*/
+	
+	/*------------ start of blog archive page  ---------------*/
+	article.col-sm-6.blogArticle{
+		margin: 0% 0% 10% 21%;
+	}
+	
+	article.col-sm-6.blogArticle {
+		font-size: 1em;
+		text-align: justify;
+	}
+	
+	div.col-lrg-2.col-lrg-offset-10.col-xs-12.blogArchivePage {
+		margin: 28% 0% 0% -6%;
+	}
+	
+	div.col-sm-2.blogDate{
+		font-size: 0.7em;
+	}
+	
+	div.col-xs-12.blogArchive{
+		margin: 10% 0% 15% -3%;
+
+	}	
+	
+	div.glyphicon.tag{
+		margin-top: -8%;
+	}	
+	/*------------ end of blog archive page  ---------------*/	
+	
+	/*------------ start of blog date archive page  ---------------*/	
 	div.col-xs-12.dateArchive{
-		margin: -2% 0% 15% 0%;
+		margin: -1% 0% 15% 0%;
 	}
 	
 	p.catHeader {
+		margin: 15% 0% 8% 10%;
 		width: 70%;
+		font-size: 1em;
 	}
 	
+	div.col-sm-2.blogDate.datePage{
+		margin-top: 6%;
+	}
+	/*------------ end of blog date archive page  ---------------*/	
+	
+	/*------------ start of blog page  ---------------*/		
+	.col-xs-8.blogPage{
+		padding: 0% 5%;
+		width: 100%;
+		font-size: 0.9em;
+	}
+
+	.col-xs-12.blogSinglePage{
+		margin-top: 5%;		
+	}
+	
+	form#commentform input#submit {
+		margin: -3% 0% 4% 0%;		
+	}
+	
+	p textarea#comment{
+		width: 100%;
+	}
+	/*------------ end of blog  page  ---------------*/	
+	
+	/*------------ start of page  ---------------*/		
+	.about-title{
+		font-size: 2em;
+	}
+	
+	.col-xs-12.aboutPage p{
+		font-size: 0.8em;
+	}
+	/*------------ end of page  ---------------*/
 		
+	/*------------ start of contact page  ---------------*/
+	input.wpcf7-form-control.wpcf7-submit{
+		width: 100%;
+	}	
+	/*------------ end of contact page  ---------------*/	
+			
+	/*-------------- start of 404 page ----------------*/		
+	div.col-xs-12.page404{
+		margin-top: 25%;
+	}
+	
+	img.img-404{
+		width: 90%;
+		height: auto;
+	}
+	
+	ul.ul-404{
+		width:90%;
+		text-align: left;
+	}
+	
+	h1.h1-404{
+		font-size: 2em;
+	}
+		
+	p.p-404{
+		font-size: 1em;
+	}	
+	/* -------------- end of 404 page ----------------*/
 }
-
-/*------------ END OF MIN-WIDTH 768px and MAX-WIDTH 991px (bootstrap sm | ipad portrait)-------------*/
-
+/*------------ END OF MIN-WIDTH 320px and MAX-WIDTH 415px (iphone4, iphone5, iphone6, iphone6+ portrait)-------------*/
 
 /*------------ START OF MIN-WIDTH 320px and MAX-WIDTH 767px (bootstrap xs | iphone4, iphone5, iphone6, iphone6+)-------------*/
 
@@ -1570,6 +2157,10 @@ ul.ul-404{
 	    transition: all 0.1s;
 	}
 	
+	.cbp-af-header nav a{
+		height: 20px;
+	}
+		
 	div.header.opacity{
 		margin-top: -25%;
 		height: 200px;
@@ -1578,8 +2169,7 @@ ul.ul-404{
 	header.cbp-af-header{
 	    -webkit-transition: height 0.1s;
 	    -moz-transition: height 0.1s;
-	    transition: height 0.1s;	
-	
+	    transition: height 0.1s;		
 	}
 	
 	header.cbp-af-header img.header-img{
@@ -1592,11 +2182,6 @@ ul.ul-404{
 		height: auto;
 		margin-left: -21%;
 	}
-	
-	.cbp-af-header nav a{
-		height: 20px;
-	}
-	
 	/*------------ end of header/nav  ---------------*/	
 	
 	/*------------ start of footer  ---------------*/
@@ -1606,45 +2191,36 @@ ul.ul-404{
 	
 	img.socialMediaBtn{
 		height: auto;
-	}
-		
+	}		
 	/*------------ end of footer  ---------------*/	
-	
-	
+		
 	/*------------ start of front page  ---------------*/	
-
-	
+    figure.cbp-so-side img{
+	    width: 100%;
+	    height: auto;
+    }
 	/*------------ end of front page  ---------------*/
 	
-	/*------------ start of portfolio archive page  ---------------*/		
+	/*------------ start of portfolio archive page  ---------------*/			
+	div.col-xs-12.archiveTitle{
+		margin-top: 27%;
+	}	
+				
 	div.col-xs-12.portfolioPage{
 	    margin: 45% 0% 3% 0%;
 	}
-	
-	div.col-xs-12.archiveTitle{
-		margin-top: 27%;
 
+	ul.pager.productPage{
+		margin: 2% auto 7% auto;
 	}
 	
 	.view-fifth:hover p{
 		text-align:justify;
 	}
-	
-	ul.pager.productPage{
-		margin: 2% auto 7% auto;
-	}
 	/*------------ end of portfolio archive page  ---------------*/		
 			
 	/*------------ start of single portfolio page ---------------*/	
-	div.col-xs-12.productPage {
-		margin: 30% auto 17% -2%;
-	}
-	
-	div.col-md-6.col-xs-12.single-portfolio{
-		text-align:center;
-	}
-	
-		
+			
 	article.col-md-6.col-xs-12.single-portfolio{
 		margin: 0% 0% 0% 2%;
 	}
@@ -1655,6 +2231,14 @@ ul.ul-404{
 	
 	div.addthis_sharing_toolbox{
 		margin: 8% 0%;
+	}
+	
+	div.col-md-6.col-xs-12.single-portfolio{
+		text-align:center;
+	}
+	
+	div.col-xs-12.productPage {
+		margin: 30% auto 17% -2%;
 	}
 	
 	div.date{
@@ -1700,6 +2284,12 @@ ul.ul-404{
 		width: 95%;
 		height: auto;
 	}	
+		
+	h2.month.sidebar,
+	h2.year.sidebar,
+	h2.categories.sidebar{
+		display: inline-block;
+	}	
 	
 	ul.monthlyList.sidebar,
 	ul.catList.sidebar{
@@ -1710,755 +2300,34 @@ ul.ul-404{
 	ul.monthlyList.sidebar li,
 	ul.catList.sidebar li{		
 		float:left;
-	}	
-	
-	h2.month.sidebar,
-	h2.year.sidebar,
-	h2.categories.sidebar{
-		display: inline-block;
-	}
-	
+	}		
 	/*------------ end of blog archive page ---------------*/	
 		
-	div.col-sm-10.col-sm-offset-1.col-xs-12.aboutPage div.wp-caption  img,
-	div.col-sm-10.col-sm-offset-1.col-xs-12.aboutPage div.wp-caption p.wp-caption-text,
-	article.col-xs-10.blogPage div.wp-caption p.wp-caption-text,
-	article.col-xs-10.blogPage div.wp-caption img {
-		width: 100%;
-		height: auto;
+	/*------------ start of single portfolio page ---------------*/		
+	div.col-md-6.col-xs-12.single-portfolio{
+		left: 0;
 	}
 	
-	
-	
-		
-	
-	/*------------   ( iphone6, iphone6+ landscape)---------------*/
-	
+	div.col-md-6.col-xs-12.single-portfolio img{
+		margin-left: 8%;
+		width: 80%;
+		height: auto;	
+	}
 
-
-
-	/*------------ ( iphone6, iphone6+ landscape)---------------*/
-	
-	/*------------  (iphone4, iphone5 landscape)---------------*/	
-
-
-	/*------------ (iphone4, iphone5 landscape)---------------*/
-	
-	/*------------  ( iphone4, iphone5, iphone6, iphone6+ portrait) ---------------*/	
-
-
-
-	/*------------ ( iphone4, iphone5, iphone6, iphone6+ portrait)---------------*/
-	
-	
+	h1.productPageTitle{
+		text-align: center;
+	}		
+	/*------------ end of single portfolio page ---------------*/		
+				
+	/*------------ start of contact page  ---------------*/
+	.contact-content{
+		width: 80%;
+		margin: 0% 10%;
+	}	
+	/*------------ end of contact page  ---------------*/				
 }
 
 /*------------ END OF MIN-WIDTH 320px and MAX-WIDTH 767px (bootstrap xs | iphone4, iphone5, iphone6)-------------*/
-
-/*------------ START OF MIN-WIDTH 320px and MAX-WIDTH 415px ( iphone4, iphone5, iphone6, iphone6+ portrait)-------------*/
-
-@media only screen and (min-width: 20.000em) and (max-width: 25.938em) {
-	
-	/*------------ start of header/nav  ---------------*/		
-
-
-	.cbp-af-header a.logo{
-		margin: -24% -5%;	
-	}
-		
-	.cbp-af-header.cbp-af-header-shrink nav ul li a{
-		font-size: 0.8em;
-	}
-	
-	.cbp-af-header.cbp-af-header-shrink{
-		height: 60px;
-	}
-	
-	.cbp-af-header.cbp-af-header-shrink nav{
-		margin: -26% -15%;
-	}
-		
-	.cbp-af-header nav{
-		margin:  0%;
-		display: block;
-	}
-	
-	.cbp-af-header nav a{
-		font-size: 1em;
-	}
-	
-	img.logo{
-		max-width: 300px;
-	}
-	
-	/*------------ end of header/nav  ---------------*/			
-	/*------------ start of footer  ---------------*/	
-		
-
-	div.col-xs-8.col-xs-0ffset-1.lrgMedia {
-		display: none;
-	}
-	
-	div.col-xs-3.socialBtns{
-		width: 100%;
-		padding: 4%;
-	}
-	
-	img.socialMediaBtn{
-		width: 80px;
-	}
-
-	p.copyright{
-		margin-top: 4%;
-	}
-	/*------------ end of footer   ---------------*/		
-	/*------------ start of front page  ---------------*/	
-	.cbp-so-section h2{
-		font-size: 1.8em;
-	}
-	
-	.cbp-so-section p{
-		font-size: 1em;
-		text-align: justify;
-	}
-	
-	figure.cbp-so-side-left img,	
-	figure.cbp-so-side-right img{
-		width: 100%;
-		height: auto;
-	}	
-	
-	section.cbp-so-section{
-		margin-bottom: 1em;
-	}
-		
-	article.cbp-so-side-left {
-        width: 100%;
-        text-align: justify;
-        margin: -9% 0% 5% 0%;
-    }
-
-    article.cbp-so-side.cbp-so-side-right {
-        text-align: justify;
-        position: absolute;
-        width: 85%;
-		margin: -20% 0% 0% 0%;
-    }
-    
-    figure.cbp-so-side.cbp-so-side-left{
-	    margin-top: 80%;
-    }
-
-    .cbp-so-side{
-        width: 100%;
-        height: 100%;
-        overflow: visible;
-    }
-
-    .cbp-so-side-left img {
-        margin: -5% 0% -39% 0%;
-    }
-
-    .cbp-so-side-right img{
-        margin: 7% 0% 27% 0%;
-    }
-
-    .cbp-so-side-right img,
-    .cbp-so-side-left img{
-        width: 100%;
-        height: 100%;
-
-    }
-
-    div.container.indexSection{
-        margin: 0% 0% -39% 0%;
-    }
-
-
-    figure.cbp-so-side.cbp-so-side-right {
-        margin: -24% 0% -42% 0%;
-    }
-
-    img.fig1,
-    img.fig2,
-    img.fig3 {
-        height: 240px;
-        width: auto;
-    }
-
-    section.cbp-so-section{
-        margin-bottom: 10em;
-    }
-
-    section.cbp-so-section h2{
-        font-size: 2.5em;
-    }
-
-    section.cbp-so-section p {
-        font-size: 1.1em;
-    }
-	
-	/*------------ end of front page  ---------------*/
-	/*------------ start of portfolio archive page  ---------------*/		
-	
-	.view{
-	    width: 300px;
-	    height: 300px;
-	    margin: 2% -7%;
-	}
-	
-	.view-fifth:hover .mask{
-		width: 415px;
-		margin: 0% 0% 0% 6%;
-	}
-	
-	div.col-xs-12.archiveTitle h1{
-		font-size: 2.5em;
-	}
-	
-	ul.pager.productPage{
-		font-size: 1em;
-	}
-	
-	/*------------ end of portfolio archive page  ---------------*/
-	/*------------ start of single portfolio page ---------------*/	
-
-	div.col-md-6.col-xs-12.single-portfolio{
-		left: 6px;
-	}
-	
-	div.col-md-6.col-xs-12.single-portfolio img{
-		width: 100%;
-		height: auto;	
-	}
-	/*------------ end of single portfolio page ---------------*/
-	/*------------ start of sidebar  ---------------*/	
-	ul.monthlyList.sidebar,
-	ul.catList.sidebar{
-		margin: 0% 0% 0% 9%;
-	}
-	
-	ul.monthlyList.sidebar li,
-	ul.catList.sidebar li{		
-		margin: 0% 36% 3% -29%;
-	}	
-	
-	/*------------ end of sidebar  ---------------*/	
-	/*------------ start of blog archive page  ---------------*/
-	article.col-sm-6.blogArticle{
-		margin: 0% 0% 10% 21%;
-	}
-	
-	article.col-sm-6.blogArticle {
-		font-size: 1em;
-		text-align: justify;
-	}
-	
-	div.col-lrg-2.col-lrg-offset-10.col-xs-12.blogArchivePage {
-		margin: 28% 0% 0% -6%;
-	}
-	
-	div.col-sm-2.blogDate{
-		font-size: 0.7em;
-	}
-	
-	div.col-xs-12.blogArchive{
-		margin: 10% 0% 15% -3%;
-
-	}	
-	
-	div.glyphicon.tag{
-		margin-top: -8%;
-	}
-	
-	/*------------ end of blog archive page  ---------------*/	
-	
-	/*------------ start of blog date archive page  ---------------*/	
-	div.col-xs-12.dateArchive{
-		margin: -1% 0% 15% 0%;
-	}
-	
-	p.catHeader {
-		width: 70%;
-		font-size: 0.9em;
-	}
-	
-	div.col-sm-2.blogDate.datePage{
-		margin-top: 6%;
-	}
-	/*------------ end of blog date archive page  ---------------*/	
-	
-	/*------------ start of blog page  ---------------*/	
-	article.col-xs-10.blogPage p img{
-		width: 95%;
-		height: auto;
-	}
-	
-	div.col-xs-12.blogSinglePage{
-		margin: -33% 0% 0% 0%;
-		
-	}
-	div.pager.blogPage{
-		margin:26% 0% -13% 0%;
-	}
-	
-	article.col-xs-10.blogPage{
-		margin: 42.5% 0% 15% 0%;
-		width:100%;
-	}
-
-	form#commentform input#submit {
-		margin: -3% 0% 4% 0%;		
-	}
-	
-	p textarea#comment{
-		width: 100%;
-	}
-	/*------------ end of blog  page  ---------------*/	
-	
-	
-	div.col-sm-10.col-sm-offset-1.col-xs-12.aboutPage div.wp-caption  img,
-	div.col-sm-10.col-sm-offset-1.col-xs-12.aboutPage div.wp-caption p.wp-caption-text,
-	article.col-xs-10.blogPage div.wp-caption p.wp-caption-text,
-	article.col-xs-10.blogPage div.wp-caption img{
-		display:none;
-	}
-
-
-    /*----------------- start of comments content ------------------*/
-
-
-	/* -------------- start of 404 page ----------------*/
-		
-	div.col-xs-12.page404{
-		margin-top: 25%;
-	}
-	
-	img.img-404{
-		width: 90%;
-		height: auto;
-	}
-	
-	ul.ul-404{
-		width:90%;
-		text-align: left;
-	}
-	
-	h1.h1-404{
-		font-size: 2em;
-	}
-		
-	p.p-404{
-		font-size: 1em;
-	}	
-	/* -------------- end of 404 page ----------------*/
-
-		 
-
-}
-
-/*------------ END OF MIN-WIDTH 320px and MAX-WIDTH 415px (iphone4, iphone5, iphone6, iphone6+ portrait)-------------*/
-
-/*------------ START OF MIN-WIDTH 416px and MAX-WIDTH 568px ( iphone4, iphone5 landscape)-------------*/
-
-@media only screen and (min-width: 26.000em) and (max-width: 35.500em) {
-	
-	/*------------ start of header/nav  ---------------*/	
-
-	.cbp-af-header a.logo{
-		margin: -14.5% auto 0% auto;
-		float:left;
-		clear: both;
-	}
-		
-	.cbp-af-header.cbp-af-header-shrink nav ul li a{
-		font-size: 1.2em;
-	}
-	
-	.cbp-af-header.cbp-af-header-shrink{
-		height: 60px;
-	}
-	
-	.cbp-af-header.cbp-af-header-shrink nav{
-		margin: -18% auto 0% auto;
-	}
-
-	
-	.cbp-af-header nav{
-		margin: -5% auto ;
-		display: block;
-		left: -14px;
-	}
-	
-	.cbp-af-header nav a{
-		font-size: 1.4em;
-	}
-	
-	div.col-xs-3.socialBtns{
-		width: 20%;
-	}
-	
-	img.logo{
-		max-width: 300px;
-	}
-
-	/*------------ end of header/nav  ---------------*/	
-		
-	/*------------ start of footer  ---------------*/	
-
-	div.col-xs-8.col-xs-0ffset-1.lrgMedia{
-		margin: 0;
-	}
-	
-	img.socialMediaBtn{
-		width: 40px;
-	}
-		
-	/*------------ end of footer  ---------------*/		
-	/*------------ start of front page  ---------------*/	
-	.cbp-so-section h2{
-		font-size: 1.8em;
-	}
-	
-	.cbp-so-section p{
-		font-size: 1em;
-		text-align: justify;
-	}
-	
-	figure.cbp-so-side-left img,	
-	figure.cbp-so-side-right img{
-		width: 100%;
-		height: auto;
-	}	
-	
-	section.cbp-so-section{
-		margin-bottom: 1em;
-	}
-	
-	/*------------ end of front page  ---------------*/
-	/*------------ start of portfolio archive page  ---------------*/			
-	.view{
-	    width: 73%;
-	    height: 300px;
-	    margin: 2% 14%;
-	}
-	
-	.view-fifth:hover .mask{
-		width: 415px;
-		margin: 0% 0% 0% 9%;
-	}
-	
-	div.col-xs-12.archiveTitle h1{
-		font-size: 3em;
-	}
-	
-	
-	/*------------ end of portfolio archive page  ---------------*/
-	
-	/*------------ start of single portfolio page ---------------*/	
-
-	div.col-md-6.col-xs-12.single-portfolio{
-		left: 6px;
-	}
-	
-	div.col-md-6.col-xs-12.single-portfolio img{
-		width: 80%;
-		height: auto;	
-	}
-	/*------------ end of single portfolio page ---------------*/
-	
-	/*------------ start of sidebar  ---------------*/	
-	ul.monthlyList.sidebar,
-	ul.catList.sidebar{
-		margin: -3% 0% 0% 10%;
-	}
-	
-	ul.monthlyList.sidebar li,
-	ul.catList.sidebar li{		
-		margin: -4% 0% 0% 9%;
-	}
-	/*------------ end of sidebar  ---------------*/	
-	/*------------ start of blog archive page  ---------------*/
-	
-	article.col-sm-6.blogArticle{
-		font-size: 1.1em;
-	}
-	
-	div.col-lrg-2.col-lrg-offset-10.col-xs-12.blogArchivePage	{
-		margin: 28% 0% 0% -3%;
-	}
-
-	div.col-xs-12.blogArchive{
-		margin: 10% 0% 15% 0%;
-	}	
-	
-	div.col-sm-2.blogDate{
-		font-size: 0.9em;
-	}	
-	
-	/*------------ end of blog archive page  ---------------*/	
-	
-	/*------------ start of blog date archive page  ---------------*/	
-	div.col-xs-12.dateArchive{
-		margin: -2% 0% 15% 0%;
-	}
-	
-	p.catHeader {
-		width: 70%;
-		font-size: 1.2em;
-	}
-	
-	div.col-sm-2.blogDate.datePage{
-		margin-top: 6%;
-	}
-	/*------------ end of blog date archive page  ---------------*/	 
-
-
-	/*------------ start of blog page  ---------------*/	
-	article.col-xs-10.blogPage p img{
-		width: 95%;
-		height: auto;
-	}
-	
-	div.col-xs-12.blogSinglePage{
-		margin: -33% 0% 0% 0%;
-		
-	}
-	
-	div.pager.blogPage{
-		margin: 20% 0% -13% 0%;
-	}
-	
-	article.col-xs-10.blogPage{
-		margin: 42.5% 0% 15% 6%;
-	}
-
-	form#commentform input#submit {
-		margin: -3% 0% 4% 0%;		
-	}
-	
-	p textarea#comment{
-		width: 100%;
-	}
-	/*------------ end of blog  page  ---------------*/	
-
-	/* -------------- start of 404 page ----------------*/
-		
-	div.col-xs-12.page404{
-		margin-top: 25%;
-	}
-	
-	img.img-404{
-		width: 90%;
-		height: auto;
-	}
-	
-	ul.ul-404{
-		width:90%;
-		text-align: left;
-	}
-	
-	h1.h1-404{
-		font-size: 3em;
-	}
-		
-	/* -------------- end of 404 page ----------------*/
-
-	
-}
-
-/*------------ END OF MIN-WIDTH 416px and MAX-WIDTH 568px (iphone4, iphone5 landscape)-------------*/
-
-/*------------ START OF MIN-WIDTH 569px and MAX-WIDTH 737px ( iphone6, iphone6+ landscape)-------------*/
-
-@media only screen and (min-width: 35.563em) and (max-width: 46.063em) {
-	
-			
-	/*------------ start of header/nav  ---------------*/	
-
-	.cbp-af-header a.logo{
-		margin: -7.5% auto 0% 3%;
-		float:left;
-		clear: both;
-	}
-			
-	.cbp-af-header.cbp-af-header-shrink nav ul li a{
-		font-size: 1.6em;
-	}
-	
-	.cbp-af-header.cbp-af-header-shrink nav{
-		margin: -12% auto 0% auto;
-	}
-	
-	.cbp-af-header nav{
-		margin: 0% auto;
-		display: block;
-		left: 0;
-	}
-	
-	.cbp-af-header nav a{
-		font-size: 1.8em;
-	}
-	
-
-
-	/*------------ end of header/nav  ---------------*/	
-
-		
-	/*------------ start of footer  ---------------*/	
-		
-	div.col-xs-8.col-xs-0ffset-1.lrgMedia{
-		margin: 0;
-	}
-	
-	img.socialMediaBtn{
-		width: 40px;
-	}
-	/*------------ end of footer  ---------------*/	
-	/*------------ end of front page  ---------------*/	
-	.cbp-so-section h2{
-		font-size: 2.6em;
-	}
-	
-	.cbp-so-section p{
-		font-size: 1.2em;
-		text-align: justify;
-	}
-	
-	figure.cbp-so-side-left img,	
-	figure.cbp-so-side-right img{
-		width: 100%;
-		height: auto;
-	}	
-	
-	section.cbp-so-section{
-		margin-bottom: 1em;
-	}
-	
-	/*------------ end of front page  ---------------*/
-	/*------------ start of portfolio archive page  ---------------*/		
-		
-	.view{
-	    width: 48%;
-	    height: 300px;
-	    margin: 5px;
-	}
-	
-	.view-fifth:hover .mask{
-		width: 380px;
-		margin: 0% 0% 0% 15%;
-	}	
-	
-	div.col-xs-12.archiveTitle h1{
-		font-size: 3em;
-	}
-	
-	/*------------ end of portfolio archive page  ---------------*/
-	/*------------ start of single portfolio page ---------------*/	
-	
-	div.col-md-6.col-xs-12.single-portfolio{
-		left: 0;
-	}
-	
-	div.col-md-6.col-xs-12.single-portfolio img{
-		width: 80%;
-		height: auto;	
-	}
-	
-	/*------------ end of single portfolio page ---------------*/
-	/*------------ start of sidebar ---------------*/	
-	ul.monthlyList.sidebar,
-	ul.catList.sidebar{
-		margin: -1% 0% 5% 6%;
-	}
-	
-	ul.monthlyList.sidebar li,
-	ul.catList.sidebar li{		
-		margin: -4% 0% 2% 5%;
-	}	
-	
-	h2.categories.sidebar{
-		margin: -4% 0% 2% 0%;
-		float: left;
-		clear: both;
-	}
-
-	/*------------ end of sidebar ---------------*/	
-	/*------------ start of blog archive page  ---------------*/
-	
-	article.col-sm-6.blogArticle{
-		font-size: 1.1em;
-		margin:0% 0% 10% 16%;
-	}
-	
-	div.col-lrg-2.col-lrg-offset-10.col-xs-12.blogArchivePage{
-		margin: 28% 0% 0% 0%;
-	}
-		
-	div.col-xs-12.blogArchive{
-		margin: 10% 0% 15% 0%;
-	}	
-	
-	
-	/*------------ end of blog archive page  ---------------*/	
-	
-	/*------------ start of blog date archive page  ---------------*/	
-	div.col-xs-12.dateArchive{
-		margin: -2% 0% 15% 0%;
-	}
-	
-	p.catHeader {
-		width: 70%;
-	}
-	
-	div.col-sm-2.blogDate.datePage{
-		margin-top: 3%;
-	}
-	/*------------ end of blog date archive page  ---------------*/	 
-
-	/*------------ start of blog page  ---------------*/	
-	article.col-xs-10.blogPage p img{
-		width: 95%;
-		height: auto;
-	}
-	
-	div.col-xs-12.blogSinglePage{
-		margin: 0% 0% 0% 0%;		
-	}
-	
-	form#commentform input#submit {
-		margin: 0% 7% 0% 0%;		
-	}
-	
-	article.col-xs-10.blogPage{
-		margin: 5% 0% 15% 6%;
-	}
-
-	/*------------ end of blog  page  ---------------*/		
-
-    
-	/* -------------- start of 404 page ----------------*/
-		
-	div.col-xs-12.page404{
-		margin-top: 25%;
-	}
-	
-	img.img-404{
-		width: 90%;
-		height: auto;
-	}
-		
-	/* -------------- end of 404 page ----------------*/
-   
-
-}
-
-/*------------ END OF MIN-WIDTH 569px and MAX-WIDTH 737px (iphone6, iphone6+ landscape)-------------*/
-
-
-
-
-
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------- END OF MEDIA QUERIES -----------------------------------------------*/
