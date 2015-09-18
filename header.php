@@ -11,8 +11,17 @@
     <body <?php body_class(); ?> >
         <header class="cbp-af-header">
 	        <img  class="header-img" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+	       
             <div class="header opacity">
                 <div class="cbp-af-inner">
+	                	                
+	                <?php if (is_front_page()) { ?>
+	               	                
+                    	<h1 class="header-headline front-page"><?php bloginfo( 'description' ); ?></h1>
+                    <?php }  else { ?>
+                        <h1 class="header-headline other"><?php wp_title(' '); ?></h1>
+                    <?php } ?>
+             
                     <?php $logo= get_option('estranged_logo', IMAGES.'/logo.png'); ?>
                     <a class="logo" href="<?php bloginfo('url'); ?>">
                         <img class="logo" src="<?php print $logo; ?>" alt="<?php bloginfo('name'); ?>" />
@@ -21,7 +30,6 @@
                         <img class="header-gravatar" src="<?php print IMAGES; ?>/profilePic.png" class="profilePic" >
 
                     </div>
-                    
                     <nav>	                    
                         <?php
 	                        $args = array(
@@ -31,6 +39,7 @@
 	                                          
                         ?>
                     </nav>
+                         
                 </div> <!-- .cbp-af-inner -->
             </div> <!-- .header .opacity -->
         </header>
