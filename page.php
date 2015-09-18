@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <div class="container aboutPage">
         <div class="row">
-            <article class="col-xs-12 aboutPage">    
+            <article class="col-xs-8 col-xs-offset-2 aboutPage">    
 	            <h1 class="about-title"><?php the_title(); ?></h1>   
                 <?php
                 if (have_posts()) {
