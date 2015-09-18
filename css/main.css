@@ -148,12 +148,34 @@ h3.popover-title{
     position: relative;
 }
 
+h1.header-headline{
+    position: absolute;	
+    width: 80%;     
+    font-size: 4em;
+    letter-spacing: 2px;
+    font-weight: 800;
+	color: rgba(255, 255, 255, 0.6);
+	transform: scale(1.1, 1.2);	
+}
+
+h1.header-headline.front-page{
+    margin: 20% 0 0 0;   
+    left: -35%;	
+}
+
+h1.header-headline.other{
+	margin: 28% 0 0 0;   
+    left: 10%;
+    text-align: center;
+	
+}
+
 .header.opacity{
 	position: fixed;
 	margin-top: -26.5%;
-    height: 90px;
+    height: 100px;
     width: 100%;	
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.3);
 }
 
 img.logo{
@@ -241,7 +263,7 @@ ul.menu{
 }
 
 header.cbp-af-header.cbp-af-header-shrink div.profilePic.hidden-xs.hidden-sm{
-	margin: 9% auto 24% auto;
+	margin: 10% auto 24% auto;
 }
 /*------------------------------------- END OF HEADER STYLES -------------------------------------*/
 
@@ -725,7 +747,7 @@ aside.col-xs-3.blogArchive {
 }
 
 figure.col-sm-4.blogArchive {
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 h1.blogName {
@@ -859,8 +881,6 @@ p.catHeader{
 
 /*--------------------------------------- START OF ABOUT PAGE CONTENT ---------------------------------------*/
 .about-title{
-	margin-top: -8%;
-	margin-bottom: 5%;
     text-align: center;
     font-size: 2.5em;
     transform : scale(1,1.2);
@@ -870,8 +890,10 @@ p.catHeader{
     -o-transform:scale(1,1.2); /* Opera */
 }
 
-.col-xs-12.aboutPage{
-    font-size: 1.4em;
+.aboutPage{
+	margin-top: 14%;
+	margin-bottom: 5%;	
+    font-size: 1.2em;
     text-align: justify;
 }
 /*--------------------------------------- END OF ABOUT PAGE CONTENT ---------------------------------------*/
@@ -1142,6 +1164,10 @@ ul.ul-404{
 	    -moz-transition: height 0.1s;
 	    transition: height 0.1s;	
 	}
+	
+	h1.header-headline{
+		display: none;
+	}
 
 	header.cbp-af-header img.header-img{
 		width: 100%;
@@ -1335,6 +1361,10 @@ ul.ul-404{
 	div.header.opacity{
 		margin-top: -25%;
 		height: 200px;
+	}
+	
+	h1.header-headline{
+		display: none;
 	}
 	
 	header.cbp-af-header{
@@ -1580,6 +1610,11 @@ ul.ul-404{
 	.cbp-af-header nav a{
 		font-size: 1.8em;
 	}
+	
+	h1.header-headline{
+		display: none;
+	}
+
 	/*------------ end of header/nav  ---------------*/	
 		
 	/*------------ start of footer  ---------------*/			
@@ -1765,6 +1800,11 @@ ul.ul-404{
 		width: 20%;
 	}
 	
+	h1.header-headline{
+		display: none;
+	}
+
+	
 	img.logo{
 		max-width: 300px;
 	}
@@ -1944,6 +1984,11 @@ s
 	.cbp-af-header nav a{
 		font-size: 1em;
 	}
+	
+	h1.header-headline{
+		display: none;
+	}
+
 	
 	img.logo{
 		max-width: 300px;
@@ -2181,6 +2226,11 @@ s
 		height: auto;
 	}
 	
+	h1.header-headline{
+		display: none;
+	}
+
+	
 	img.header-gravatar{
 		width: 50%;
 		height: auto;
@@ -2336,4 +2386,17 @@ s
 /*--------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------- END OF MEDIA QUERIES -----------------------------------------------*/
 /*--------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
